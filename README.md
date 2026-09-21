@@ -1,21 +1,23 @@
 # Pokedex TP3 - Programacion III
 
-Es una pokedex para armar un equipo de pokemones. Esta hecha con vue, pinia, axios y mysql.
+Aplicacion para armar un equipo de pokemones. Vue.js, Pinia, Axios, PokeAPI y MySQL.
 
-## que hay que tener
+Repositorio: https://github.com/alejomcorti/pokedex
+
+## requisitos
 
 - node
-- mysql (nosotros usamos xampp)
+- mysql (xampp o similar)
 
-## base de datos
+## como levantarlo
 
-1. abrir phpmyadmin
-2. importar `backend/pokedex.sql`
-3. tiene que quedar la base pokedex con la tabla equipos
+### 1. base de datos
 
-si mysql tiene contraseña hay que ponerla en server.js en DB_PASSWORD
+Importar `backend/pokedex.sql` en phpMyAdmin. Tiene que quedar la base `pokedex` con la tabla `equipos`.
 
-## backend
+Si mysql tiene contraseña, ponerla en `backend/server.js` en `DB_PASSWORD`.
+
+### 2. backend (puerto 3000)
 
 ```
 cd backend
@@ -23,9 +25,9 @@ npm install
 node server.js
 ```
 
-tiene que decir conectado a mysql. corre en el puerto 3000
+tiene que decir `conectado a mysql`
 
-## frontend
+### 3. frontend (puerto 5173)
 
 ```
 npm install
@@ -36,12 +38,15 @@ abrir http://localhost:5173
 
 ## como se usa
 
-primero esperas que carguen los pokemones, despues podes buscarlos, clickeas para agregarlos al equipo (maximo 6) y le pones un nombre y lo guardas. si ya hay un equipo guardado podes tocarlo en usar.
+esperas que carguen los 151 pokemones, podes buscarlos por nombre, clickeas la tarjeta para sumarlo o sacarlo del equipo (maximo 6) y le pones un nombre y lo guardas. los equipos quedan en mysql, se pueden volver a cargar con Usar.
 
-## archivos
+## estructura
 
-- src/components/Listado.vue
-- src/components/PokemonCard.vue
-- src/components/Equipo.vue
-- src/stores/Pinia_Pokemon.js
-- backend/server.js
+```
+src/components/Listado.vue
+src/components/PokemonCard.vue
+src/components/Equipo.vue
+src/stores/Pinia_Pokemon.js
+backend/server.js
+backend/pokedex.sql
+```
