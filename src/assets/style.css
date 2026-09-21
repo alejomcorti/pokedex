@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial;
+  background: #f4f4f6;
+  color: #222;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+header {
+  background: #e3350d;
+  color: white;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+.materia {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* las cajas blancas */
+.panel {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.titulo-seccion {
+  margin-bottom: 12px;
+}
+
+.titulo-seccion h2 {
+  font-size: 1.3rem;
+}
+
+.titulo-seccion p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.buscador,
+.form-guardar input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.aviso {
+  background: #fff4e5;
+  border: 1px solid #f0c36d;
+  color: #6a4b00;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.tarjeta {
+  border: 2px solid #ececec;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.tarjeta:hover {
+  border-color: #e3350d;
+}
+
+.tarjeta.activa {
+  border-color: #3b4cca;
+  background: #eef1ff;
+}
+
+.tarjeta img {
+  width: 96px;
+  height: 96px;
+}
+
+.numero {
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.tarjeta h3 {
+  margin: 4px 0 8px;
+  font-size: 1rem;
+}
+
+.tipos {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.tipo {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  color: white;
+  background: #777;
+}
+
+.tipo-grass { background: #78c850; }
+.tipo-poison { background: #a040a0; }
+.tipo-fire { background: #f08030; }
+.tipo-water { background: #6890f0; }
+.tipo-bug { background: #a8b820; }
+.tipo-normal { background: #a8a878; }
+.tipo-electric { background: #f8d030; color: #333; }
+.tipo-ground { background: #e0c068; color: #333; }
+.tipo-fairy { background: #ee99ac; }
+.tipo-fighting { background: #c03028; }
+.tipo-psychic { background: #f85888; }
+.tipo-rock { background: #b8a038; }
+.tipo-ghost { background: #705898; }
+.tipo-ice { background: #98d8d8; color: #333; }
+.tipo-dragon { background: #7038f8; }
+.tipo-dark { background: #705848; }
+.tipo-steel { background: #b8b8d0; color: #333; }
+.tipo-flying { background: #a890f0; }
+
+.habilidades {
+  font-size: 0.75rem;
+  color: #666;
+  min-height: 32px;
+  margin-bottom: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  background: #e3350d;
+  color: white;
+}
+
+button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+.tarjeta button {
+  width: 100%;
+}
+
+.lista-equipo {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.lista-equipo li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.lista-equipo img {
+  width: 48px;
+  height: 48px;
+}
+
+.lista-equipo div {
+  flex: 1;
+}
+
+.lista-equipo small,
+.equipo-guardado small {
+  display: block;
+  color: #666;
+}
+
+.btn-quitar {
+  background: #555;
+}
+
+.btn-guardar {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+.equipos-bd {
+  margin-top: 18px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+.equipos-bd h3 {
+  margin-bottom: 8px;
+}
+
+.equipo-guardado {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.equipo-guardado button {
+  background: #3b4cca;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* esto lo deje por las dudas
+.prueba {
+  color: red;
+}
+*/
