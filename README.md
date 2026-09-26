@@ -7,17 +7,36 @@ Repositorio: https://github.com/alejomcorti/pokedex
 ## requisitos
 
 - node
-- mysql (xampp o similar)
+- git
+- mysql (en la escuela, xampp)
+- internet (para npm y para la pokeapi)
 
-## como levantarlo
+## como levantarlo en una pc nueva
 
-### 1. base de datos
+### 1. bajar el proyecto
 
-Importar `backend/pokedex.sql` en phpMyAdmin. Tiene que quedar la base `pokedex` con la tabla `equipos`.
+```
+git clone https://github.com/alejomcorti/pokedex.git
+cd pokedex
+```
 
-Si mysql tiene contraseña, ponerla en `backend/server.js` en `DB_PASSWORD`.
+### 2. prender mysql
 
-### 2. backend (puerto 3000)
+Abrir XAMPP y darle Start a MySQL. Tiene que quedar en verde.
+
+### 3. crear la base
+
+1. Abrir phpMyAdmin (http://localhost/phpmyadmin)
+2. Importar el archivo `backend/pokedex.sql`
+3. Tiene que quedar la base `pokedex` con la tabla `equipos`
+
+La tabla se crea en ese momento, una sola vez. Despues, al guardar un equipo, solo se agregan filas.
+
+Si mysql tiene contraseña, ponerla en `backend/server.js` en `DB_PASSWORD`. En xampp de la escuela a veces esta vacia.
+
+### 4. backend (puerto 3000)
+
+Abrir una terminal en la carpeta del proyecto:
 
 ```
 cd backend
@@ -25,20 +44,23 @@ npm install
 node server.js
 ```
 
-tiene que decir `conectado a mysql`
+Tiene que decir `conectado a mysql`. Esa terminal no se cierra.
 
-### 3. frontend (puerto 5173)
+### 5. frontend (puerto 5173)
+
+Abrir otra terminal, volver a la carpeta del proyecto (no quedarse en backend):
 
 ```
+cd ..
 npm install
 npm run dev
 ```
 
-abrir http://localhost:5173
+Abrir el link que aparece, http://localhost:5173
 
 ## como se usa
 
-esperas que carguen los 151 pokemones, podes buscarlos por nombre, clickeas la tarjeta para sumarlo o sacarlo del equipo (maximo 6) y le pones un nombre y lo guardas. los equipos quedan en mysql, se pueden volver a cargar con Usar.
+Esperar a que carguen los 151 pokemones. Se pueden buscar por nombre, clickear la tarjeta para sumarlo o sacarlo del equipo (maximo 6), ponerle un nombre y guardar. Los equipos quedan en mysql y se pueden volver a cargar con Usar.
 
 ## estructura
 
